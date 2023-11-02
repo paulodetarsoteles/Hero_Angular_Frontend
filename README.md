@@ -1,6 +1,14 @@
 # HeroAngularFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.7.
+Esse projeto foi gerado com o [Angular CLI](https://github.com/angular/angular-cli) version 16.2.7.
+
+## Detalhes
+
+Após alguns projetos de backend decide estudar Typescript com o Framework Angular, nesse projeto em específico pretendo criar uma interface amigável ao usuário dos meus projetos Hero onde há vários relacionamentos de entidades. 
+
+Acompanhei a playlist da CrisTech "Projeto FullStack Angular 16 + .NET 6" começando a partir do segundo vídeo e adaptando as funções do meu projeto. 
+
+Link da playlist do curso: https://www.youtube.com/playlist?list=PL8l5r7-11AADwxNy8aYGM2P2Dr0nB5ZW4 
 
 ## Development server
 
