@@ -2,7 +2,7 @@
   <button>Novo herói</button>
   <div class="input-box">
     <label>Procurar herói: </label>
-    <input type="text" placeholder="Nome do herói">
+    <input type="text" placeholder="Nome do herói" (input)="searchHero($event)">
   </div>
 </div>
 
@@ -14,23 +14,30 @@
       <th>Nome</th>
       <th>Última Atualização</th>
       <th></th>
-      <th></th>
     </tr>
   </thead>
-  <tbody>
+  <tbody *ngFor="let hero of heroes">
     <tr>
       <td>
-        <img src="assets/images/green-ball.png" style="width: 1em;" alt="Ativo">
-        <img src="assets/images/red-ball.png" style="width: 1em;" alt="Inativo">
+        <div *ngIf="hero.active === true; else inactiveHero">
+          <img src="assets/images/green-ball.png" style="width: 1em;" alt="Ativo">
+        </div>
+        <ng-template #inactiveHero>
+          <img src="assets/images/red-ball.png" style="width: 1em;" alt="Inativo">
+        </ng-template>
       </td>
-      <td>99</td>
-      <td>Paulo</td>
-      <td>24/12/1983 07:30:00</td>
       <td>
-        <button>Editar</button>
+        {{hero.heroId}}
+      </td>
+      <td>
+        {{hero.name}}
+      </td>
+      <td>
+        {{hero.updateDate}}
+      </td>
+      <td>
         <button>Detalhes</button>
-      </td>
-      <td>
+        <button>Editar</button>
         <button>Excluir</button>
       </td>
     </tr>

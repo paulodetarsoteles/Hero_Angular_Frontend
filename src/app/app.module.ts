@@ -10,6 +10,7 @@ import { HeroComponent } from './pages/hero/hero.component';
 import { WeaponComponent } from './pages/weapon/weapon.component';
 import { SecretComponent } from './pages/secret/secret.component';
 import { MovieComponent } from './pages/movie/movie.component';
+import { HeroCadastroComponent } from './pages/hero-cadastro/hero-cadastro.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MovieComponent } from './pages/movie/movie.component';
     HeroComponent,
     WeaponComponent,
     SecretComponent,
-    MovieComponent
+    MovieComponent,
+    HeroCadastroComponent
   ],
   imports: [
     BrowserModule,
