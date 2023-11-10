@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Weapon } from 'src/app/models/Weapon';
+import { WeaponService } from 'src/app/service/weapon.service';
 
 @Component({
   selector: 'app-weapon',
@@ -7,4 +9,23 @@ import { Component } from '@angular/core';
 })
 export class WeaponComponent {
 
+  weapons: Weapon[] = [];
+  weaponsGeral: Weapon[] = [];
+
+  constructor(private weaponService: WeaponService){ }
+
+  ngOnInit(): void{
+    this.weaponService.GetWeapons().subscribe(data => {
+      this.weapons = data;
+      this.weaponsGeral = data;
+    });
+  }
+
+  searchWeapon(event: Event): void{
+    const value = (event.target as HTMLInputElement).value.toLowerCase();
+
+    this.weapons = this.weaponsGeral.filter(weapon => {
+      return weapon.name.toLowerCase().includes(value);
+    });
+  }
 }

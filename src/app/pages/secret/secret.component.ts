@@ -16,10 +16,8 @@ export class SecretComponent {
 
   ngOnInit(): void {
     this.secretService.GetSecrets().subscribe(data => {
-      const dataSecret = data;
-
-      this.secrets = dataSecret;
-      this.secretsGeral = dataSecret;
+      this.secrets = data;
+      this.secretsGeral = data;
     });
   }
 
