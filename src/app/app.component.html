@@ -1,1 +1,16 @@
-  <app-hero></app-hero>
+<header>
+  <div class="headertop">
+    <div>
+      <span><a routerLink="/home">Página Inicial</a></span>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <span><a routerLink="/hero">Herói</a></span>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <span><a routerLink="/secret">Identidade Secreta</a></span>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <span><a routerLink="/weapon">Arma</a></span>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <span><a routerLink="/movie">Filme</a></span>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <main role="main" class="pb-3">
+    <router-outlet></router-outlet>
+  </main>
+</div>
