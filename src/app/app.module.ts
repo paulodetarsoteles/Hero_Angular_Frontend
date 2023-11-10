@@ -11,6 +11,7 @@ import { WeaponComponent } from './pages/weapon/weapon.component';
 import { SecretComponent } from './pages/secret/secret.component';
 import { MovieComponent } from './pages/movie/movie.component';
 import { HeroCadastroComponent } from './pages/hero-cadastro/hero-cadastro.component';
+import { HeroFormComponent } from './components/hero-form/hero-form.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HeroCadastroComponent } from './pages/hero-cadastro/hero-cadastro.compo
     WeaponComponent,
     SecretComponent,
     MovieComponent,
-    HeroCadastroComponent
+    HeroCadastroComponent,
+    HeroFormComponent
   ],
   imports: [
     BrowserModule,
