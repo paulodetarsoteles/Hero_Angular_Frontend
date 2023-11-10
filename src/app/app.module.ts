@@ -15,6 +15,9 @@ import { HeroFormComponent } from './components/hero-form/hero-form.component';
 import { SecretFormComponent } from './components/secret-form/secret-form.component';
 import { WeaponFormComponent } from './components/weapon-form/weapon-form.component';
 import { MovieFormComponent } from './components/movie-form/movie-form.component';
+import { MovieCadastroComponent } from './pages/movie-cadastro/movie-cadastro.component';
+import { WeaponCadastroComponent } from './pages/weapon-cadastro/weapon-cadastro.component';
+import { SecretCadastroComponent } from './pages/secret-cadastro/secret-cadastro.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { MovieFormComponent } from './components/movie-form/movie-form.component
     HeroFormComponent,
     SecretFormComponent,
     WeaponFormComponent,
-    MovieFormComponent
+    MovieFormComponent,
+    MovieCadastroComponent,
+    WeaponCadastroComponent,
+    SecretCadastroComponent
   ],
   imports: [
     BrowserModule,
