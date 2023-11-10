@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Secret } from 'src/app/models/Secret';
+import { SecretService } from 'src/app/service/secret.service';
 
 @Component({
   selector: 'app-secret',
@@ -7,4 +9,25 @@ import { Component } from '@angular/core';
 })
 export class SecretComponent {
 
+  secrets: Secret[] = [];
+  secretsGeral: Secret[] = [];
+
+  constructor(private secretService: SecretService){ }
+
+  ngOnInit(): void {
+    this.secretService.GetSecrets().subscribe(data => {
+      const dataSecret = data;
+
+      this.secrets = dataSecret;
+      this.secretsGeral = dataSecret;
+    });
+  }
+
+  searchSecret(event: Event): void{
+    const value = (event.target as HTMLInputElement).value.toLowerCase();
+
+    this.secrets = this.secretsGeral.filter(secret => {
+      return secret.name.toLowerCase().includes(value);
+    });
+  }
 }

@@ -12,9 +12,9 @@ export class HeroComponent implements OnInit {
   heroes: Hero[] = [];
   heroesGeneral: Hero[] = [];
 
-  constructor(private heroService: HeroService){}
+  constructor(private heroService: HeroService) { }
 
-    ngOnInit(): void {
+  ngOnInit(): void {
     this.heroService.GetHeroes().subscribe(data => {
       const dataHero = data;
 
@@ -27,7 +27,7 @@ export class HeroComponent implements OnInit {
     });
   }
 
-  searchHero(event: Event): void{
+  searchHero(event: Event): void {
     const value = (event.target as HTMLInputElement).value.toLowerCase();
 
     this.heroes = this.heroesGeneral.filter(hero => {
