@@ -12,6 +12,9 @@ import { SecretComponent } from './pages/secret/secret.component';
 import { MovieComponent } from './pages/movie/movie.component';
 import { HeroCadastroComponent } from './pages/hero-cadastro/hero-cadastro.component';
 import { HeroFormComponent } from './components/hero-form/hero-form.component';
+import { SecretFormComponent } from './components/secret-form/secret-form.component';
+import { WeaponFormComponent } from './components/weapon-form/weapon-form.component';
+import { MovieFormComponent } from './components/movie-form/movie-form.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { HeroFormComponent } from './components/hero-form/hero-form.component';
     SecretComponent,
     MovieComponent,
     HeroCadastroComponent,
-    HeroFormComponent
+    HeroFormComponent,
+    SecretFormComponent,
+    WeaponFormComponent,
+    MovieFormComponent
   ],
   imports: [
     BrowserModule,
