@@ -7,7 +7,6 @@ import { HeroService } from 'src/app/service/hero.service';
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.css']
 })
-
 export class HeroComponent implements OnInit {
 
   heroes: Hero[] = [];
