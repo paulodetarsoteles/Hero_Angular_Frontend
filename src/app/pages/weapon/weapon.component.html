@@ -1,1 +1,38 @@
-<p>weapon works!</p>
+<div class="hero-box" style="border-top: 70px;">
+  <button routerLink="/weapon-cadastro">Nova Arma</button>
+  <div class="input-box">
+    <label>Procurar arma: </label>
+    <input type="text" placeholder="Nome da arma" (input)="searchWeapon($event)">
+  </div>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cod.</th>
+      <th>Nome</th>
+      <th>Herói</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let weapon of weapons">
+    <tr>
+      <td>
+      <td>
+        {{weapon.weaponId}}
+      </td>
+      <td>
+        {{weapon.name}}
+      </td>
+      <td>
+        <span *ngIf="weapon.hero !== null">{{weapon.hero?.name}}</span>
+        <span *ngIf="weapon.hero === null">-</span>
+      </td>
+      <td>
+        <button>Detalhes</button>
+        <button>Editar</button>
+        <button>Excluir</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

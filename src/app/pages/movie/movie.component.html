@@ -1,1 +1,37 @@
-<p>movie works!</p>
+<div class="hero-box" style="border-top: 70px;">
+  <button routerLink="/movie-cadastro">Novo filme</button>
+  <div class="input-box">
+    <label>Procurar filme: </label>
+    <input type="text" placeholder="Nome do filme" (input)="searchMovie($event)">
+  </div>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cod.</th>
+      <th>Nome</th>
+      <th>Nota</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let movie of movies">
+    <tr>
+      <td>
+      <td>
+        {{movie.movieId}}
+      </td>
+      <td>
+        {{movie.name}}
+      </td>
+      <td>
+        {{movie.rate}}
+      </td>
+      <td>
+        <button>Detalhes</button>
+        <button>Editar</button>
+        <button>Excluir</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
