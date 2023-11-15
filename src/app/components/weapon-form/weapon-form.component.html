@@ -1,15 +1,15 @@
 <h4>Dados da Arma</h4>
-<form action="">
+<form [formGroup]="weaponForm" (ngSubmit)="submit()" #formDir="ngForm">
   <div class="input_box">
-    <label for="">Nome: </label>
+    <label>Nome: </label>
     <input type="text" formControlName="name" placeholder="Insira o nome" required>
   </div>
   <div class="input_box">
-    <label for="">Herói: </label>
-    <input type="text" formControlName="name">
+    <label>Herói: </label>
+    <input type="text" formControlName="hero">
   </div>
   <div class="btn-box">
-    <button type="submit">Salvar</button>
-    <button>Voltar</button>
+    <button type="submit" [disabled]="!weaponForm.valid">Salvar</button>
+    <button routerLink="/weapon">Voltar</button>
   </div>
 </form>
