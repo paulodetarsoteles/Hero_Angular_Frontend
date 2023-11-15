@@ -26,7 +26,7 @@ export class SecretFormComponent implements OnInit {
           Validators.maxLength(30)
         ])
       ),
-      hero: new FormControl('')
+      hero: new FormControl(null)
     });
 
     this.heroService.GetHeroes().subscribe(data => {
