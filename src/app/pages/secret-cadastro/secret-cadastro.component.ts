@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Secret } from 'src/app/models/Secret';
+import { SecretService } from 'src/app/service/secret.service';
 
 @Component({
   selector: 'app-secret-cadastro',
@@ -7,4 +10,11 @@ import { Component } from '@angular/core';
 })
 export class SecretCadastroComponent {
 
+  constructor(private secretService: SecretService, private router: Router){ }
+
+  createSecret(secret: Secret): void {
+    this.secretService.CreateSecret(secret).subscribe((data) => {
+      this.router.navigate(['/secret'])
+    });
+  }
 }
