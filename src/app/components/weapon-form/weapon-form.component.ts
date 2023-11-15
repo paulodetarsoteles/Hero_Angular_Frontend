@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Hero } from 'src/app/models/Hero';
+import { Weapon } from 'src/app/models/Weapon';
 import { HeroService } from 'src/app/service/hero.service';
 import { SecretService } from 'src/app/service/secret.service';
 
@@ -9,14 +11,31 @@ import { SecretService } from 'src/app/service/secret.service';
   styleUrls: ['./weapon-form.component.css']
 })
 export class WeaponFormComponent {
+  @Output() onSubmit = new EventEmitter<Weapon>();
 
   heroes: Hero[] = [];
+  weaponForm!: FormGroup;
 
   constructor(private heroService: HeroService, private secretService: SecretService) { }
 
   ngOnInit(): void {
+    this.weaponForm = new FormGroup({
+      name: new FormControl(
+        '', Validators.compose([
+          Validators.required,
+          Validators.minLength(1),
+          Validators.maxLength(30)
+        ])
+      ),
+      hero: new FormControl('', [Validators.required])
+    });
+
     this.heroService.GetHeroes().subscribe(data => {
       this.heroes = data;
     });
+  }
+
+  submit(): void {
+    this.onSubmit.emit(this.weaponForm.value);
   }
 }
