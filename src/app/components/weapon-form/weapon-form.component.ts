@@ -3,7 +3,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Hero } from 'src/app/models/Hero';
 import { Weapon } from 'src/app/models/Weapon';
 import { HeroService } from 'src/app/service/hero.service';
-import { SecretService } from 'src/app/service/secret.service';
 
 @Component({
   selector: 'app-weapon-form',
@@ -16,7 +15,7 @@ export class WeaponFormComponent {
   heroes: Hero[] = [];
   weaponForm!: FormGroup;
 
-  constructor(private heroService: HeroService, private secretService: SecretService) { }
+  constructor(private heroService: HeroService) { }
 
   ngOnInit(): void {
     this.weaponForm = new FormGroup({
@@ -27,7 +26,7 @@ export class WeaponFormComponent {
           Validators.maxLength(30)
         ])
       ),
-      hero: new FormControl('', [Validators.required])
+      hero: new FormControl('')
     });
 
     this.heroService.GetHeroes().subscribe(data => {
