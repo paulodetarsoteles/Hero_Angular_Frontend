@@ -9,11 +9,19 @@ import { Secret } from '../models/Secret';
 })
 export class SecretService {
 
-  private apiUrl = `${environment.ApiUrl}/GetSecrets`;
+  private apiUrl = environment.ApiUrl;
 
   constructor(private http: HttpClient) { }
 
   GetSecrets(): Observable<Secret[]> {
-    return this.http.get<Secret[]>(this.apiUrl);
+    return this.http.get<Secret[]>(`${this.apiUrl}/GetSecrets`);
+  }
+
+  GetSecretById(id: Number): Observable<Secret> {
+    return this.http.get<Secret>(`${this.apiUrl}/GetSecretById/${id}`);
+  }
+
+  CreateSecret(secret: Secret): Observable<Secret[]> {
+    return this.http.post<Secret[]>(`${this.apiUrl}/CreateSecret`, secret);
   }
 }

@@ -1,15 +1,15 @@
 <h4>Dados do herói</h4>
-<form action="">
+<form [formGroup]="heroForm" (ngSubmit)="submit()" #formDir="ngForm">
   <div class="input_box">
-    <label for="">Nome:</label>
+    <label>Nome:</label>
     <input type="text" formControlName="name" placeholder="Insira o nome" required>
   </div>
   <div class="input_box">
-    <label for="">Ativo:</label>
+    <label>Ativo:</label>
     <input type="checkbox" formControlName="active">
   </div>
   <div class="btn-box">
-    <button type="submit">Salvar</button>
-    <button>Voltar</button>
+    <button type="submit" [disabled]="!heroForm.valid">Salvar</button>
+    <button routerLink="/hero">Voltar</button>
   </div>
 </form>

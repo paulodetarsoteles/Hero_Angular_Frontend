@@ -9,11 +9,19 @@ import { Movie } from '../models/Movie';
 })
 export class MovieService {
 
-  private apiUrl = `${environment.ApiUrl}/GetMovies`;
+  private apiUrl = environment.ApiUrl;
 
   constructor(private http: HttpClient) { }
 
   GetMovies(): Observable<Movie[]> {
-    return this.http.get<Movie[]>(this.apiUrl);
+    return this.http.get<Movie[]>(`${this.apiUrl}/GetMovies`);
+  }
+
+  GetMovieById(id: Number): Observable<Movie> {
+    return this.http.get<Movie>(`${this.apiUrl}/GetMovieById/${id}`);
+  }
+
+  CreateMovie(movie: Movie): Observable<Movie> {
+    return this.http.post<Movie>(`${this.apiUrl}/CreateMovie`, movie);
   }
 }

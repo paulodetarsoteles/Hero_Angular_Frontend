@@ -9,11 +9,19 @@ import { Weapon } from '../models/Weapon';
 })
 export class WeaponService {
 
-  private apiUrl = `${environment.ApiUrl}/GetWeapons`;
+  private apiUrl = environment.ApiUrl;
 
   constructor(private http: HttpClient) { }
 
   GetWeapons(): Observable<Weapon[]> {
-    return this.http.get<Weapon[]>(this.apiUrl);
+    return this.http.get<Weapon[]>(`${this.apiUrl}/GetWeapons`);
+  }
+
+  GetWeaponById(id: Number): Observable<Weapon> {
+    return this.http.get<Weapon>(`${this.apiUrl}/GetWeaponById/${id}`);
+  }
+
+  CreateWeapon(weapon: Weapon): Observable<Weapon[]> {
+    return this.http.post<Weapon[]>(`${this.apiUrl}/CreateWeapon`, weapon);
   }
 }
