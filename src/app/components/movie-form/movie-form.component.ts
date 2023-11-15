@@ -26,7 +26,7 @@ export class MovieFormComponent {
           Validators.maxLength(30)
         ])
       ),
-      rate: new FormControl(0, [Validators.required])
+      rate: new FormControl(1, [Validators.required])
     });
 
     this.heroService.GetHeroes().subscribe(data => {

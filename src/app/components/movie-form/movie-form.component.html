@@ -1,15 +1,27 @@
 <h4>Dados do filme</h4>
-<form action="">
+<form [formGroup]="movieForm" (ngSubmit)="submit()" #formDir="ngForm">
   <div class="input_box">
-    <label for="">Nome:</label>
+    <label>Nome: </label>
     <input type="text" formControlName="name" placeholder="Insira o nome" required>
   </div>
   <div class="input_box">
-    <label for="">Nota:</label>
-    <input type="number" formControlName="name" min="0" max="10">
+    <label>Nota: </label>
+    <select formControlName="rate">
+      <option value=0>0</option>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
+      <option value=4>4</option>
+      <option value=5>5</option>
+      <option value=6>6</option>
+      <option value=7 selected>7</option>
+      <option value=8>8</option>
+      <option value=9>9</option>
+      <option value=10>10</option>
+    </select>
   </div>
   <div class="btn-box">
-    <button type="submit">Salvar</button>
-    <button>Voltar</button>
+    <button type="submit" [disabled]="!movieForm.valid">Salvar</button>
+    <button routerLink="/movie">Voltar</button>
   </div>
 </form>
