@@ -1,11 +1,11 @@
 <h4>Dados do herói</h4>
 <form [formGroup]="heroForm" (ngSubmit)="submit()" #formDir="ngForm">
   <div class="input_box">
-    <label>Nome:</label>
+    <label>Nome: </label>
     <input type="text" formControlName="name" placeholder="Insira o nome" required>
   </div>
   <div class="input_box">
-    <label>Ativo:</label>
+    <label>Ativo: </label>
     <input type="checkbox" formControlName="active">
   </div>
   <div class="btn-box">
