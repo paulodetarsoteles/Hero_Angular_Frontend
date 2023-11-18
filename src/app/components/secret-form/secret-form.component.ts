@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Hero } from 'src/app/models/Hero';
 import { Secret } from 'src/app/models/Secret';
@@ -11,6 +11,8 @@ import { HeroService } from 'src/app/service/hero.service';
 })
 export class SecretFormComponent implements OnInit {
   @Output() onSubmit = new EventEmitter<Secret>();
+  @Input() btnAcao!: string;
+  @Input() btnTitulo!: string;
 
   heroes: Hero[] = [];
   secretForm!: FormGroup;

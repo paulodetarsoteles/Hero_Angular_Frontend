@@ -1,3 +1,4 @@
+<h2>{{btnTitulo}}</h2>
 <h4>Dados do filme</h4>
 <form [formGroup]="movieForm" (ngSubmit)="submit()" #formDir="ngForm">
   <div class="input_box">
@@ -21,7 +22,7 @@
     </select>
   </div>
   <div class="btn-box">
-    <button type="submit" [disabled]="!movieForm.valid">Salvar</button>
+    <button type="submit" [disabled]="!movieForm.valid">{{btnAcao}}</button>
     <button routerLink="/movie">Voltar</button>
   </div>
 </form>

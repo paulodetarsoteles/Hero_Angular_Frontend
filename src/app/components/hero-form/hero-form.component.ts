@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Hero } from 'src/app/models/Hero';
 
@@ -9,6 +9,8 @@ import { Hero } from 'src/app/models/Hero';
 })
 export class HeroFormComponent implements OnInit {
   @Output() onSubmit = new EventEmitter<Hero>();
+  @Input() btnAcao!: string;
+  @Input() btnTitulo!: string;
 
   heroForm!: FormGroup;
 

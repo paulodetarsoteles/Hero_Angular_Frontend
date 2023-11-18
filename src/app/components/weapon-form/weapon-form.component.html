@@ -1,3 +1,4 @@
+<h2>{{btnTitulo}}</h2>
 <h4>Dados da Arma</h4>
 <form [formGroup]="weaponForm" (ngSubmit)="submit()" #formDir="ngForm">
   <div class="input_box">
@@ -9,7 +10,7 @@
     <input type="text" formControlName="hero">
   </div> -->
   <div class="btn-box">
-    <button type="submit" [disabled]="!weaponForm.valid">Salvar</button>
+    <button type="submit" [disabled]="!weaponForm.valid">{{btnAcao}}</button>
     <button routerLink="/weapon">Voltar</button>
   </div>
 </form>

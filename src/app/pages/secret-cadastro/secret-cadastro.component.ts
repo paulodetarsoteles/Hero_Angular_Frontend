@@ -10,6 +10,9 @@ import { SecretService } from 'src/app/service/secret.service';
 })
 export class SecretCadastroComponent {
 
+  btnAcao: string = "Incluir";
+  btnTitulo: string = "Cadastrar nova identidade secreta";
+
   constructor(private secretService: SecretService, private router: Router){ }
 
   createSecret(secret: Secret): void {

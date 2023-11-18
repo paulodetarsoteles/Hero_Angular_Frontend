@@ -10,15 +10,14 @@ import { HeroService } from 'src/app/service/hero.service';
 })
 export class HeroCadastroComponent {
 
-  constructor(private heroService: HeroService, private router: Router){ }
+  btnAcao: string = "Incluir";
+  btnTitulo: string = "Cadastrar novo herói";
+
+  constructor(private heroService: HeroService, private router: Router) { }
 
   createHero(hero: Hero): void {
     this.heroService.CreateHero(hero).subscribe((data) => {
-      this.router.navigate(['/hero'])    .then(nav => {
-        console.log(nav); // true if navigation is successful
-      }, err => {
-        console.log(err) // when there's an error
-      });
+      this.router.navigate(['/hero'])
     });
   }
 }

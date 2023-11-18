@@ -10,6 +10,9 @@ import { MovieService } from 'src/app/service/movie.service';
 })
 export class MovieCadastroComponent {
 
+  btnAcao: string = "Incluir";
+  btnTitulo: string = "Cadastrar novo filme";
+
   constructor(private movieService: MovieService, private router: Router){ }
 
   createMovie(movie: Movie): void {

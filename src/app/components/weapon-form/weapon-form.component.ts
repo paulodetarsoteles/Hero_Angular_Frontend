@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Hero } from 'src/app/models/Hero';
 import { Weapon } from 'src/app/models/Weapon';
@@ -11,6 +11,8 @@ import { HeroService } from 'src/app/service/hero.service';
 })
 export class WeaponFormComponent {
   @Output() onSubmit = new EventEmitter<Weapon>();
+  @Input() btnAcao!: string;
+  @Input() btnTitulo!: string;
 
   heroes: Hero[] = [];
   weaponForm!: FormGroup;

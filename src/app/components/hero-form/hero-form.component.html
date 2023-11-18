@@ -1,3 +1,4 @@
+<h2>{{btnTitulo}}</h2>
 <h4>Dados do herói</h4>
 <form [formGroup]="heroForm" (ngSubmit)="submit()" #formDir="ngForm">
   <div class="input_box">
@@ -9,7 +10,7 @@
     <input type="checkbox" formControlName="active">
   </div>
   <div class="btn-box">
-    <button type="submit" [disabled]="!heroForm.valid">Salvar</button>
+    <button type="submit" [disabled]="!heroForm.valid">{{btnAcao}}</button>
     <button routerLink="/hero">Voltar</button>
   </div>
 </form>

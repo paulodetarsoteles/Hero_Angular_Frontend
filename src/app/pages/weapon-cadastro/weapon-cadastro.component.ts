@@ -10,6 +10,9 @@ import { WeaponService } from 'src/app/service/weapon.service';
 })
 export class WeaponCadastroComponent {
 
+  btnAcao: string = "Incluir";
+  btnTitulo: string = "Cadastrar nova arma";
+
   constructor(private weaponService: WeaponService, private router: Router){ }
 
   createWeapon(weapon: Weapon): void {
