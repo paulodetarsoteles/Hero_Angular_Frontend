@@ -20,6 +20,10 @@ import { MovieFormComponent } from './components/movie-form/movie-form.component
 import { MovieCadastroComponent } from './pages/movie-cadastro/movie-cadastro.component';
 import { WeaponCadastroComponent } from './pages/weapon-cadastro/weapon-cadastro.component';
 import { SecretCadastroComponent } from './pages/secret-cadastro/secret-cadastro.component';
+import { HeroEditarComponent } from './pages/hero-editar/hero-editar.component';
+import { MovieEditarComponent } from './pages/movie-editar/movie-editar.component';
+import { SecretEditarComponent } from './pages/secret-editar/secret-editar.component';
+import { WeaponEditarComponent } from './pages/weapon-editar/weapon-editar.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,11 @@ import { SecretCadastroComponent } from './pages/secret-cadastro/secret-cadastro
     MovieFormComponent,
     MovieCadastroComponent,
     WeaponCadastroComponent,
-    SecretCadastroComponent
+    SecretCadastroComponent,
+    HeroEditarComponent,
+    MovieEditarComponent,
+    SecretEditarComponent,
+    WeaponEditarComponent
   ],
   imports: [
     BrowserModule,
