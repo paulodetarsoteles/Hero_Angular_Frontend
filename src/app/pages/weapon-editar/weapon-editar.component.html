@@ -1,3 +1,8 @@
-<div>
+<div *ngIf="weapon; else waiting">
   <app-weapon-form [btnAcao]="btnAcao" [btnTitulo]="btnTitulo" [dados]="weapon"></app-weapon-form>
 </div>
+<ng-template #waiting>
+  <div>
+    <span>Aguardando...</span>
+  </div>
+</ng-template>

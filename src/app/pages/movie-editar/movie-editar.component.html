@@ -1,3 +1,8 @@
-<div>
+<div *ngIf="movie; else waiting">
   <app-movie-form [btnAcao]="btnAcao" [btnTitulo]="btnTitulo" [dados]="movie"></app-movie-form>
 </div>
+<ng-template #waiting>
+  <div>
+    <span>Aguardando...</span>
+  </div>
+</ng-template>
