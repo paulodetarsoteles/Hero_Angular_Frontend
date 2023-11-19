@@ -22,6 +22,7 @@ export class MovieFormComponent {
 
   ngOnInit(): void {
     this.movieForm = new FormGroup({
+      movieId: new FormControl(this.dados ? this.dados.movieId : null),
       name: new FormControl(this.dados ? this.dados.name : '',
         Validators.compose([
           Validators.required,

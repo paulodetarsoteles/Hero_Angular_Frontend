@@ -22,6 +22,7 @@ export class SecretFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.secretForm = new FormGroup({
+      secretId: new FormControl(this.dados ? this.dados.secretId : null),
       name: new FormControl(this.dados ? this.dados.name : '',
         Validators.compose([
           Validators.required,

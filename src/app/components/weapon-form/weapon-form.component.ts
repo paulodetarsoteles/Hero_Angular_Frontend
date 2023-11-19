@@ -22,6 +22,7 @@ export class WeaponFormComponent {
 
   ngOnInit(): void {
     this.weaponForm = new FormGroup({
+      weaponId: new FormControl(this.dados ? this.dados.weaponId : null),
       name: new FormControl(this.dados ? this.dados.name : '',
         Validators.compose([
           Validators.required,
