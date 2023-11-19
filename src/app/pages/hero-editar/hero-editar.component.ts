@@ -23,4 +23,8 @@ export class HeroEditarComponent implements OnInit {
       this.hero = data;
     })
   }
+
+  editHero(hero: Hero): void {
+
+  }
 }

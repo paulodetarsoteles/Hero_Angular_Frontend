@@ -23,4 +23,8 @@ export class SecretEditarComponent {
       this.secret = data;
     })
   }
+
+  editSecret(secret: Secret): void {
+
+  }
 }

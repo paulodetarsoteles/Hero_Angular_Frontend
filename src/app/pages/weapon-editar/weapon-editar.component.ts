@@ -23,4 +23,8 @@ export class WeaponEditarComponent {
       this.weapon = data;
     })
   }
+
+  editWeapon(weapon: Weapon): void {
+
+  }
 }

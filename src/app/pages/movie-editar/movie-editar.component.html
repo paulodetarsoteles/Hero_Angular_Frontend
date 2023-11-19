@@ -1,5 +1,5 @@
 <div *ngIf="movie; else waiting">
-  <app-movie-form [btnAcao]="btnAcao" [btnTitulo]="btnTitulo" [dados]="movie"></app-movie-form>
+  <app-movie-form [btnAcao]="btnAcao" [btnTitulo]="btnTitulo" [dados]="movie" (onSubmit)="editMovie($event)"></app-movie-form>
 </div>
 <ng-template #waiting>
   <div>

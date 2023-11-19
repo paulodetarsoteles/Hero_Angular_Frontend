@@ -1,5 +1,5 @@
 <div *ngIf="hero; else waiting">
-  <app-hero-form [btnAcao]="btnAcao" [btnTitulo]="btnTitulo" [dados]="hero"></app-hero-form>
+  <app-hero-form [btnAcao]="btnAcao" [btnTitulo]="btnTitulo" [dados]="hero" (onSubmit)="editHero($event)"></app-hero-form>
 </div>
 <ng-template #waiting>
   <div>

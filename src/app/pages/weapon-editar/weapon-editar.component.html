@@ -1,5 +1,5 @@
 <div *ngIf="weapon; else waiting">
-  <app-weapon-form [btnAcao]="btnAcao" [btnTitulo]="btnTitulo" [dados]="weapon"></app-weapon-form>
+  <app-weapon-form [btnAcao]="btnAcao" [btnTitulo]="btnTitulo" [dados]="weapon" (onSubmit)="editWeapon($event)"></app-weapon-form>
 </div>
 <ng-template #waiting>
   <div>

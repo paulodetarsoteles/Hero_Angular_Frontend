@@ -23,4 +23,8 @@ export class MovieEditarComponent {
       this.movie = data;
     })
   }
+
+  editMovie(movie: Movie): void {
+
+  }
 }
