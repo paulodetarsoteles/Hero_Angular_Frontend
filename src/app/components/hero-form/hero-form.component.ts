@@ -19,14 +19,15 @@ export class HeroFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.heroForm = new FormGroup({
-      name: new FormControl(
-        '', Validators.compose([
+      name: new FormControl(this.dados ? this.dados.name : '',
+        Validators.compose([
           Validators.required,
           Validators.minLength(1),
           Validators.maxLength(30)
         ])
       ),
-      active: new FormControl(false, Validators.required)
+      active: new FormControl(this.dados ? this.dados.active : false,
+        Validators.required)
     });
   }
 

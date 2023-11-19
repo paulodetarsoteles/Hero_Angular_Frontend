@@ -22,14 +22,15 @@ export class MovieFormComponent {
 
   ngOnInit(): void {
     this.movieForm = new FormGroup({
-      name: new FormControl(
-        '', Validators.compose([
+      name: new FormControl(this.dados ? this.dados.name : '',
+        Validators.compose([
           Validators.required,
           Validators.minLength(1),
           Validators.maxLength(30)
         ])
       ),
-      rate: new FormControl(7, [Validators.required])
+      rate: new FormControl(this.dados ? this.dados.rate : 7,
+        [Validators.required])
     });
 
     this.heroService.GetHeroes().subscribe(data => {
