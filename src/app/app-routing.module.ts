@@ -9,18 +9,26 @@ import { HeroCadastroComponent } from './pages/hero-cadastro/hero-cadastro.compo
 import { WeaponCadastroComponent } from './pages/weapon-cadastro/weapon-cadastro.component';
 import { SecretCadastroComponent } from './pages/secret-cadastro/secret-cadastro.component';
 import { MovieCadastroComponent } from './pages/movie-cadastro/movie-cadastro.component';
+import { HeroEditarComponent } from './pages/hero-editar/hero-editar.component';
+import { WeaponEditarComponent } from './pages/weapon-editar/weapon-editar.component';
+import { SecretEditarComponent } from './pages/secret-editar/secret-editar.component';
+import { MovieEditarComponent } from './pages/movie-editar/movie-editar.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'hero', component: HeroComponent },
   { path: 'hero-cadastro', component: HeroCadastroComponent },
+  { path: 'hero-editar/:id', component: HeroEditarComponent },
   { path: 'weapon', component: WeaponComponent },
   { path: 'weapon-cadastro', component: WeaponCadastroComponent },
+  { path: 'weapon-editar/:id', component: WeaponEditarComponent },
   { path: 'secret', component: SecretComponent },
   { path: 'secret-cadastro', component: SecretCadastroComponent },
+  { path: 'secret-editar/:id', component: SecretEditarComponent },
   { path: 'movie', component: MovieComponent },
-  { path: 'movie-cadastro', component: MovieCadastroComponent }
+  { path: 'movie-cadastro', component: MovieCadastroComponent },
+  { path: 'movie-editar/:id', component: MovieEditarComponent },
 ];
 
 @NgModule({
