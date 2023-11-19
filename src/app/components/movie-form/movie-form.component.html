@@ -1,6 +1,7 @@
 <h2>{{btnTitulo}}</h2>
 <h4>Dados do filme</h4>
 <form [formGroup]="movieForm" (ngSubmit)="submit()" #formDir="ngForm">
+  <input type="hidden" formControlName="movieId">
   <div class="input_box">
     <label>Nome: </label>
     <input type="text" formControlName="name" placeholder="Insira o nome" required>

@@ -1,6 +1,7 @@
 <h2>{{btnTitulo}}</h2>
 <h4>Dados da Arma</h4>
 <form [formGroup]="weaponForm" (ngSubmit)="submit()" #formDir="ngForm">
+  <input type="hidden" formControlName="weaponId">
   <div class="input_box">
     <label>Nome: </label>
     <input type="text" formControlName="name" placeholder="Insira o nome" required>
