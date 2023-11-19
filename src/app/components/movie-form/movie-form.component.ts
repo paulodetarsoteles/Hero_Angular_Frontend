@@ -13,6 +13,7 @@ export class MovieFormComponent {
   @Output() onSubmit = new EventEmitter<Movie>();
   @Input() btnAcao!: string;
   @Input() btnTitulo!: string;
+  @Input() dados: Movie | null = null;
 
   heroes: Hero[] = [];
   movieForm!: FormGroup;

@@ -13,6 +13,7 @@ export class SecretFormComponent implements OnInit {
   @Output() onSubmit = new EventEmitter<Secret>();
   @Input() btnAcao!: string;
   @Input() btnTitulo!: string;
+  @Input() dados: Secret | null = null;
 
   heroes: Hero[] = [];
   secretForm!: FormGroup;

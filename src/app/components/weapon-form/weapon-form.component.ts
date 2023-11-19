@@ -13,6 +13,7 @@ export class WeaponFormComponent {
   @Output() onSubmit = new EventEmitter<Weapon>();
   @Input() btnAcao!: string;
   @Input() btnTitulo!: string;
+  @Input() dados: Weapon | null = null;
 
   heroes: Hero[] = [];
   weaponForm!: FormGroup;

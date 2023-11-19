@@ -11,6 +11,7 @@ export class HeroFormComponent implements OnInit {
   @Output() onSubmit = new EventEmitter<Hero>();
   @Input() btnAcao!: string;
   @Input() btnTitulo!: string;
+  @Input() dados: Hero | null = null;
 
   heroForm!: FormGroup;
 
