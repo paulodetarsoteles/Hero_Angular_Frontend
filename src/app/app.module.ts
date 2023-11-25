@@ -24,6 +24,10 @@ import { HeroEditarComponent } from './pages/hero-editar/hero-editar.component';
 import { MovieEditarComponent } from './pages/movie-editar/movie-editar.component';
 import { SecretEditarComponent } from './pages/secret-editar/secret-editar.component';
 import { WeaponEditarComponent } from './pages/weapon-editar/weapon-editar.component';
+import { HeroDetalhesComponent } from './pages/hero-detalhes/hero-detalhes.component';
+import { MovieDetalhesComponent } from './pages/movie-detalhes/movie-detalhes.component';
+import { SecretDetalhesComponent } from './pages/secret-detalhes/secret-detalhes.component';
+import { WeaponDetalhesComponent } from './pages/weapon-detalhes/weapon-detalhes.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +48,11 @@ import { WeaponEditarComponent } from './pages/weapon-editar/weapon-editar.compo
     HeroEditarComponent,
     MovieEditarComponent,
     SecretEditarComponent,
-    WeaponEditarComponent
+    WeaponEditarComponent,
+    HeroDetalhesComponent,
+    MovieDetalhesComponent,
+    SecretDetalhesComponent,
+    WeaponDetalhesComponent
   ],
   imports: [
     BrowserModule,
