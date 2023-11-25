@@ -21,7 +21,11 @@ export class SecretService {
     return this.http.get<Secret>(`${this.apiUrl}/GetSecretById/${id}`);
   }
 
-  CreateSecret(secret: Secret): Observable<Secret[]> {
-    return this.http.post<Secret[]>(`${this.apiUrl}/CreateSecret`, secret);
+  CreateSecret(secret: Secret): Observable<Secret> {
+    return this.http.post<Secret>(`${this.apiUrl}/CreateSecret`, secret);
+  }
+
+  UpdateSecret(secret: Secret): Observable<Secret> {
+    return this.http.put<Secret>(`${this.apiUrl}/UpdateSecret`, secret);
   }
 }

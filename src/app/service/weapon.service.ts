@@ -21,7 +21,11 @@ export class WeaponService {
     return this.http.get<Weapon>(`${this.apiUrl}/GetWeaponById/${id}`);
   }
 
-  CreateWeapon(weapon: Weapon): Observable<Weapon[]> {
-    return this.http.post<Weapon[]>(`${this.apiUrl}/CreateWeapon`, weapon);
+  CreateWeapon(weapon: Weapon): Observable<Weapon> {
+    return this.http.post<Weapon>(`${this.apiUrl}/CreateWeapon`, weapon);
+  }
+
+  UpdateWeapon(weapon: Weapon): Observable<Weapon> {
+    return this.http.put<Weapon>(`${this.apiUrl}/UpdateWeapon`, weapon);
   }
 }
