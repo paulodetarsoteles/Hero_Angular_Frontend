@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Weapon } from 'src/app/models/Weapon';
 import { WeaponService } from 'src/app/service/weapon.service';
 
@@ -14,17 +14,19 @@ export class WeaponEditarComponent {
   btnTitulo: string = 'Editar informações';
   weapon!: Weapon;
 
-  constructor(private weaponService: WeaponService, private route: ActivatedRoute) { }
+  constructor(private weaponService: WeaponService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     const id: number = Number(this.route.snapshot.paramMap.get('id'));
 
     this.weaponService.GetWeaponById(id).subscribe((data) => {
       this.weapon = data;
-    })
+    });
   }
 
   editWeapon(weapon: Weapon): void {
-
+    this.weaponService.UpdateWeapon(weapon).subscribe((data) => {
+      this.router.navigate(['/weapon']);
+    });
   }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Secret } from 'src/app/models/Secret';
 import { SecretService } from 'src/app/service/secret.service';
 
@@ -14,17 +14,19 @@ export class SecretEditarComponent {
   btnTitulo: string = 'Editar informações';
   secret!: Secret;
 
-  constructor(private secretService: SecretService, private route: ActivatedRoute) { }
+  constructor(private secretService: SecretService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     const id: number = Number(this.route.snapshot.paramMap.get('id'));
 
     this.secretService.GetSecretById(id).subscribe((data) => {
       this.secret = data;
-    })
+    });
   }
 
   editSecret(secret: Secret): void {
-
+    this.secretService.UpdateSecret(secret).subscribe((data) => {
+      this.router.navigate(['/secret']);
+    });
   }
 }
