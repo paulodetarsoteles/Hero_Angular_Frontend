@@ -1,32 +1,41 @@
 <div>
   <h2>Detalhes do herói</h2>
 </div>
-<div>
+<div *ngIf="hero; else waiting">
   <h4>Dados: </h4>
   <form>
     <div class="input-box">
       <label>Nome: </label>
-      <input type="text">
+      <input type="text" value="{{hero.name}}" disabled>
     </div>
     <div class="input-box">
       <label>Ativo: </label>
-      <input type="checkbox">
+      <input type="checkbox" *ngIf="hero.active" checked disabled>
+      <input type="checkbox" *ngIf="!hero.active" unchecked disabled>
     </div>
     <div class="input-box">
       <label>Última Atualização: </label>
-      <input type="text">
+      <input type="text" value="{{hero.updateDate}}" disabled>
     </div>
     <div class="input-box">
       <label>Identidade secreta: </label>
-      <input type="text">
+      <input type="text" value="{{hero.secret?.name}}" disabled>
     </div>
     <div class="input-box">
       <label>Armas: </label>
-      <input type="text">
+      <input type="text" disabled>
     </div>
     <div class="input-box">
       <label>Filmes: </label>
-      <input type="text">
+      <input type="text" disabled>
+    </div>
+    <div class="btn-box">
+      <button routerLink="/hero">Voltar</button>
     </div>
   </form>
 </div>
+<ng-template #waiting>
+  <div>
+    <span>Aguardando...</span>
+  </div>
+</ng-template>

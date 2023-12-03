@@ -28,7 +28,7 @@
         <span *ngIf="weapon.hero === null">&nbsp;&nbsp;-&nbsp;&nbsp;</span>
       </td>
       <td>
-        <button>Detalhes</button>
+        <button routerLink="/weapon-detalhes/{{weapon.weaponId}}">Detalhes</button>
         <button routerLink="/weapon-editar/{{weapon.weaponId}}">Editar</button>
         <button>Excluir</button>
       </td>

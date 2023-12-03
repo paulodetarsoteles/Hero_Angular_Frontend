@@ -1,16 +1,24 @@
 <div>
   <h2>Detalhes da arma</h2>
 </div>
-<div>
+<div *ngIf="weapon; else waiting">
   <h4>Dados: </h4>
   <form>
     <div class="input-box">
       <label>Nome: </label>
-      <input type="text">
+      <input type="text" value="{{weapon.name}}" disabled>
     </div>
     <div class="input-box">
       <label>Herói: </label>
-      <input type="text">
+      <input type="text" value="{{weapon.hero?.name}}" disabled>
+    </div>
+    <div class="btn-box">
+      <button routerLink="/weapon">Voltar</button>
     </div>
   </form>
 </div>
+<ng-template #waiting>
+  <div>
+    <span>Aguardando...</span>
+  </div>
+</ng-template>
