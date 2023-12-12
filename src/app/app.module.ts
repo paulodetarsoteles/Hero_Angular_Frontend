@@ -30,6 +30,9 @@ import { SecretDetalhesComponent } from './pages/secret-detalhes/secret-detalhes
 import { WeaponDetalhesComponent } from './pages/weapon-detalhes/weapon-detalhes.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+// Angular Material Imports
+import { MatButtonModule } from '@angular/material/button';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +64,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
