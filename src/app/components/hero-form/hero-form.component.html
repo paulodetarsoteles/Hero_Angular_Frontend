@@ -1,17 +1,21 @@
-<h2>{{btnTitulo}}</h2>
-<h4>Dados do herói</h4>
-<form [formGroup]="heroForm" (ngSubmit)="submit()" #formDir="ngForm">
-  <input type="hidden" formControlName="heroId">
-  <div class="input_box">
-    <label>Nome: </label>
-    <input type="text" formControlName="name" placeholder="Insira o nome" required>
-  </div>
-  <div class="input_box">
-    <label>Ativo: </label>
-    <input type="checkbox" formControlName="active">
-  </div>
-  <div class="btn-box">
-    <button type="submit" [disabled]="!heroForm.valid">{{btnAcao}}</button>
-    <button routerLink="/hero">Voltar</button>
-  </div>
-</form>
+<mat-card>
+  <h2>{{btnTitulo}}</h2>
+  <h4>Dados do herói</h4>
+  <form [formGroup]="heroForm" (ngSubmit)="submit()" #formDir="ngForm">
+    <input type="hidden" formControlName="heroId">
+    <div class="input_box">
+    <mat-form-field>
+      <mat-label>Nome: </mat-label>
+      <input matInput type="text" formControlName="name" placeholder="Insira o nome" required>
+    </mat-form-field>
+    </div>
+    <div class="input_box">
+      <label>Ativo: </label>
+      <input type="checkbox" formControlName="active">
+    </div>
+    <div class="btn-box">
+      <button type="submit" [disabled]="!heroForm.valid" mat-raised-button color="accent">{{btnAcao}}</button>
+      <button routerLink="/hero" mat-raised-button>Voltar</button>
+    </div>
+  </form>
+</mat-card>
