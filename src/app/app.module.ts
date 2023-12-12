@@ -28,6 +28,7 @@ import { HeroDetalhesComponent } from './pages/hero-detalhes/hero-detalhes.compo
 import { MovieDetalhesComponent } from './pages/movie-detalhes/movie-detalhes.component';
 import { SecretDetalhesComponent } from './pages/secret-detalhes/secret-detalhes.component';
 import { WeaponDetalhesComponent } from './pages/weapon-detalhes/weapon-detalhes.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { WeaponDetalhesComponent } from './pages/weapon-detalhes/weapon-detalhes
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
