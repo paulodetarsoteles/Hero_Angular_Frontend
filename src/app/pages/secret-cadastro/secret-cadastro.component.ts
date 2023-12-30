@@ -16,6 +16,9 @@ export class SecretCadastroComponent {
   constructor(private secretService: SecretService, private router: Router){ }
 
   createSecret(secret: Secret): void {
+    if (secret.secretId == null){
+      secret.secretId = 0;
+    }
     this.secretService.CreateSecret(secret).subscribe((data) => {
       this.router.navigate(['/secret'])
     });

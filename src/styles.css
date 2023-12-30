@@ -1,19 +1,23 @@
-html, body {
-  /* width: 100vh; */
+html, body, app-root, .app-frame {
   height: 100vh;
-  margin: 0px;
+  margin: 0;
   padding: 0px;
-  /* box-sizing: border-box; */
-  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 14px;
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0); */
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+a {
+  color: white;
 }
 
 .container {
-  width: 90%;
-  height: 90%;
+  height: 100;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.cardform {
+  margin: 5px;
+  padding: 5px;
 }

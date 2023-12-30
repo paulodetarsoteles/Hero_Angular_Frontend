@@ -16,6 +16,9 @@ export class WeaponCadastroComponent {
   constructor(private weaponService: WeaponService, private router: Router){ }
 
   createWeapon(weapon: Weapon): void {
+    if (weapon.weaponId == null){
+      weapon.weaponId = 0;
+    }
     this.weaponService.CreateWeapon(weapon).subscribe((data) => {
       this.router.navigate(['/weapon'])
     });

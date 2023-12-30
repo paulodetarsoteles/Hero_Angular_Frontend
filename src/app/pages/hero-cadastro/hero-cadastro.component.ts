@@ -16,6 +16,9 @@ export class HeroCadastroComponent {
   constructor(private heroService: HeroService, private router: Router) { }
 
   createHero(hero: Hero): void {
+    if (hero.heroId == null){
+      hero.heroId = 0;
+    }
     this.heroService.CreateHero(hero).subscribe((data) => {
       this.router.navigate(['/hero'])
     });

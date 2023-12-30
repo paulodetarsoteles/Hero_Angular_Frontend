@@ -1,31 +1,37 @@
 <mat-card>
-  <h2>{{btnTitulo}}</h2>
-  <h4>Dados do filme</h4>
-  <form [formGroup]="movieForm" (ngSubmit)="submit()" #formDir="ngForm">
-    <input type="hidden" formControlName="movieId">
-    <div class="input_box">
-      <label>Nome: </label>
-      <input type="text" formControlName="name" placeholder="Insira o nome" required>
-    </div>
-    <div class="input_box">
-      <label>Nota: </label>
-      <select formControlName="rate">
-        <option value=0>0</option>
-        <option value=1>1</option>
-        <option value=2>2</option>
-        <option value=3>3</option>
-        <option value=4>4</option>
-        <option value=5>5</option>
-        <option value=6>6</option>
-        <option value=7 selected>7</option>
-        <option value=8>8</option>
-        <option value=9>9</option>
-        <option value=10>10</option>
-      </select>
-    </div>
-    <div class="btn-box">
-      <button type="submit" [disabled]="!movieForm.valid" mat-raised-button color="accent">{{btnAcao}}</button>
-      <button routerLink="/movie" mat-raised-button>Voltar</button>
-    </div>
-  </form>
+  <div class="cardform">
+    <h2>{{btnTitulo}}</h2>
+    <h4>Dados do filme</h4>
+    <form [formGroup]="movieForm" (ngSubmit)="submit()" #formDir="ngForm">
+      <input type="hidden" formControlName="movieId">
+      <div class="input_box">
+        <mat-form-field>
+          <label>Nome: </label>
+          <input matInput type="text" formControlName="name" placeholder="Insira o nome" required>
+        </mat-form-field>
+      </div>
+      <div class="input_box">
+        <mat-form-field>
+          <mat-label>Nota: </mat-label>
+          <mat-select formControlName="rate">
+            <mat-option value=0>0</mat-option>
+            <mat-option value=1>1</mat-option>
+            <mat-option value=2>2</mat-option>
+            <mat-option value=3>3</mat-option>
+            <mat-option value=4>4</mat-option>
+            <mat-option value=5>5</mat-option>
+            <mat-option value=6>6</mat-option>
+            <mat-option value=7 selected>7</mat-option>
+            <mat-option value=8>8</mat-option>
+            <mat-option value=9>9</mat-option>
+            <mat-option value=10>10</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="btn-box">
+        <button type="submit" [disabled]="!movieForm.valid" mat-raised-button color="accent">{{btnAcao}}</button>
+        <button routerLink="/movie" mat-raised-button>Voltar</button>
+      </div>
+    </form>
+  </div>
 </mat-card>

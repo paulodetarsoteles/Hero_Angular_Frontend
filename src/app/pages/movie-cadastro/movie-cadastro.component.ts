@@ -16,6 +16,9 @@ export class MovieCadastroComponent {
   constructor(private movieService: MovieService, private router: Router){ }
 
   createMovie(movie: Movie): void {
+    if (movie.movieId == null){
+      movie.movieId = 0;
+    }
     this.movieService.CreateMovie(movie).subscribe((data) => {
       this.router.navigate(['/movie'])
     });
