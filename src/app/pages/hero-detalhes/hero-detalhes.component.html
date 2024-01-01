@@ -1,41 +1,54 @@
-<div>
-  <h2>Detalhes do herói</h2>
-</div>
-<div *ngIf="hero; else waiting">
-  <h4>Dados: </h4>
-  <form>
-    <div class="input-box">
-      <label>Nome: </label>
-      <input type="text" value="{{hero.name}}" disabled>
+<mat-card>
+  <div class="cardform">
+    <div>
+      <h2>Detalhes do herói</h2>
     </div>
-    <div class="input-box">
-      <label>Ativo: </label>
-      <input type="checkbox" *ngIf="hero.active" checked disabled>
-      <input type="checkbox" *ngIf="!hero.active" unchecked disabled>
+    <div *ngIf="hero; else waiting">
+      <h4>Dados: </h4>
+      <form>
+        <div class="input_box">
+          <mat-form-field>
+            <mat-label>Nome: </mat-label>
+            <input matInput type="text" value="{{hero.name}}" disabled />
+          </mat-form-field>
+        </div>
+        <div class="input_box">
+          <mat-checkbox formControlName="active" *ngIf="hero.active" checked [disabled]="true">Ativo:</mat-checkbox>
+          <mat-checkbox formControlName="active" *ngIf="!hero.active" unchecked [disabled]="true">Ativo:</mat-checkbox>
+        </div>
+        <div class="input_box">
+          <mat-form-field>
+            <mat-label>Última Atualização: </mat-label>
+            <input matInput type="text" value="{{hero.updateDate}}" disabled />
+          </mat-form-field>
+        </div>
+        <div class="input_box">
+          <mat-form-field>
+            <mat-label>Identidade secreta: </mat-label>
+            <input matInput type="text" value="{{hero.secret?.name}}" disabled />
+          </mat-form-field>
+        </div>
+        <div class="input_box">
+          <mat-form-field>
+            <mat-label>Armas: </mat-label>
+            <input matInput type="text" disabled />
+          </mat-form-field>
+        </div>
+        <div class="input_box">
+          <mat-form-field>
+            <mat-label>Filmes: </mat-label>
+            <input matInput type="text" disabled />
+          </mat-form-field>
+        </div>
+        <div class="btn-box">
+          <button mat-raised-button routerLink="/hero">Voltar</button>
+        </div>
+      </form>
     </div>
-    <div class="input-box">
-      <label>Última Atualização: </label>
-      <input type="text" value="{{hero.updateDate}}" disabled>
-    </div>
-    <div class="input-box">
-      <label>Identidade secreta: </label>
-      <input type="text" value="{{hero.secret?.name}}" disabled>
-    </div>
-    <div class="input-box">
-      <label>Armas: </label>
-      <input type="text" disabled>
-    </div>
-    <div class="input-box">
-      <label>Filmes: </label>
-      <input type="text" disabled>
-    </div>
-    <div class="btn-box">
-      <button routerLink="/hero">Voltar</button>
-    </div>
-  </form>
-</div>
-<ng-template #waiting>
-  <div>
-    <span>Aguardando...</span>
+    <ng-template #waiting>
+      <div>
+        <span>Aguardando...</span>
+      </div>
+    </ng-template>
   </div>
-</ng-template>
+</mat-card>

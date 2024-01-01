@@ -1,13 +1,30 @@
 html, body, app-root, .app-frame {
+  width: 100vw;
   height: 100vh;
   margin: 0;
   padding: 0px;
   box-sizing: border-box;
   overflow: auto;
+  /* font-size: 62.5%; */
 }
 
 a {
   color: white;
+}
+
+mat-card {
+  width: 85%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 3rem;
+  padding: 4rem;
+}
+
+mat-form-field {
+  width: 100%;
 }
 
 .container {
@@ -16,8 +33,24 @@ a {
   justify-content: center;
   align-items: center;
 }
-
+/*
 .cardform {
   margin: 5px;
   padding: 5px;
+} */
+
+.input_box {
+  width: 500px;
+}
+
+.btn-box {
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-box button {
+  width: 50%;
+  margin: 4px;
 }

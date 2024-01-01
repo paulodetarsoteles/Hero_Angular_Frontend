@@ -1,24 +1,32 @@
-<div>
-  <h2>Detalhes da arma</h2>
-</div>
-<div *ngIf="weapon; else waiting">
-  <h4>Dados: </h4>
-  <form>
-    <div class="input-box">
-      <label>Nome: </label>
-      <input type="text" value="{{weapon.name}}" disabled>
+<mat-card>
+  <div class="cardform">
+    <div>
+      <h2>Detalhes da arma</h2>
     </div>
-    <div class="input-box">
-      <label>Herói: </label>
-      <input type="text" value="{{weapon.hero?.name}}" disabled>
+    <div *ngIf="weapon; else waiting">
+      <h4>Dados: </h4>
+      <form>
+        <div class="input_box">
+        <mat-form-field>
+          <mat-label>Nome: </mat-label>
+          <input matInput type="text" value="{{weapon.name}}" disabled>
+        </mat-form-field>
+        </div>
+        <div class="input_box">
+        <mat-form-field>
+          <mat-label>Herói: </mat-label>
+          <input matInput type="text" value="{{weapon.hero?.name}}" disabled>
+        </mat-form-field>
+        </div>
+        <div class="btn-box">
+          <button mat-raised-button routerLink="/weapon">Voltar</button>
+        </div>
+      </form>
     </div>
-    <div class="btn-box">
-      <button routerLink="/weapon">Voltar</button>
-    </div>
-  </form>
-</div>
-<ng-template #waiting>
-  <div>
-    <span>Aguardando...</span>
+    <ng-template #waiting>
+      <div>
+        <span>Aguardando...</span>
+      </div>
+    </ng-template>
   </div>
-</ng-template>
+</mat-card>

@@ -1,28 +1,38 @@
-<div>
-  <h2>Detalhes do filme</h2>
-</div>
-<div *ngIf="movie; else waiting">
-  <h4>Dados: </h4>
-  <form>
-    <div class="input-box">
-      <label>Nome: </label>
-      <input type="text" value="{{movie.name}}" disabled>
+<mat-card>
+  <div class="cardform">
+    <div>
+      <h2>Detalhes do filme</h2>
     </div>
-    <div class="input-box">
-      <label>Nota: </label>
-      <input type="number" value="{{movie.rate}}" disabled>
+    <div *ngIf="movie; else waiting">
+      <h4>Dados: </h4>
+      <form>
+        <div class="input_box">
+          <mat-form-field>
+            <mat-label>Nome: </mat-label>
+            <input matInput type="text" value="{{movie.name}}" disabled>
+          </mat-form-field>
+        </div>
+        <div class="input_box">
+          <mat-form-field>
+            <mat-label>Nota: </mat-label>
+            <input matInput type="number" value="{{movie.rate}}" disabled>
+          </mat-form-field>
+        </div>
+        <div class="input_box">
+          <mat-form-field>
+            <mat-label>Heróis: </mat-label>
+            <input matInput type="text" value="" disabled>
+          </mat-form-field>
+        </div>
+        <div class="btn-box">
+          <button mat-raised-button routerLink="/movie">Voltar</button>
+        </div>
+      </form>
     </div>
-    <div class="input-box">
-      <label>Heróis: </label>
-      <input type="text" value="" disabled>
-    </div>
-    <div class="btn-box">
-      <button routerLink="/movie">Voltar</button>
-    </div>
-  </form>
-</div>
-<ng-template #waiting>
-  <div>
-    <span>Aguardando...</span>
+    <ng-template #waiting>
+      <div>
+        <span>Aguardando...</span>
+      </div>
+    </ng-template>
   </div>
-</ng-template>
+</mat-card>
