@@ -54,3 +54,13 @@ mat-form-field {
   width: 50%;
   margin: 4px;
 }
+
+.divHomeTopLeft{
+  display: inline-block;
+  width: 30%;
+}
+
+.divHomeTopRight{
+  display: inline-block;
+  width: 70%;
+}

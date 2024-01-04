@@ -11,6 +11,7 @@ export class HeroComponent implements OnInit {
 
   heroes: Hero[] = [];
   heroesGeneral: Hero[] = [];
+  columns: String[] = ['Ativo', 'Código', 'Nome', 'Última Atualização', 'Opções'];
 
   constructor(private heroService: HeroService) { }
 
