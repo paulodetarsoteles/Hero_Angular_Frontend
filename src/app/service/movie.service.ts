@@ -28,4 +28,8 @@ export class MovieService {
   UpdateMovie(movie: Movie): Observable<Movie> {
     return this.http.put<Movie>(`${this.apiUrl}/UpdateMovie`, movie);
   }
+
+  DeleteMovie(id: Number): Observable<Movie> {
+    return this.http.delete<Movie>(`${this.apiUrl}/DeleteMovie/${id}`);
+  }
 }

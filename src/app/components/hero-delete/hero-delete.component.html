@@ -1,9 +1,9 @@
-<div>
+<div class="deleteModal">
   <h2>Confirma a exclusão?</h2>
   <div>
-    <p>Nome: </p>
+    <p>Nome: {{hero.name}}</p>
   </div>
   <div>
-    <button mat-raised-button color="warn">EXCLUIR</button>
+    <button mat-raised-button color="warn" (click)="delete()" >EXCLUIR</button>
   </div>
 </div>

@@ -28,4 +28,8 @@ export class SecretService {
   UpdateSecret(secret: Secret): Observable<Secret> {
     return this.http.put<Secret>(`${this.apiUrl}/UpdateSecret`, secret);
   }
+
+  DeleteSecret(id: Number): Observable<Secret> {
+    return this.http.delete<Secret>(`${this.apiUrl}/DeleteSecret/${id}`);
+  }
 }

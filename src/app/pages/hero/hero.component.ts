@@ -41,7 +41,10 @@ export class HeroComponent implements OnInit {
   openDialog(id: number): void {
     this.dialog.open(HeroDeleteComponent, {
       width: '360px',
-      height: '180px'
+      height: '180px',
+      data: {
+        id: id
+      }
     });
   }
 }

@@ -28,4 +28,8 @@ export class WeaponService {
   UpdateWeapon(weapon: Weapon): Observable<Weapon> {
     return this.http.put<Weapon>(`${this.apiUrl}/UpdateWeapon`, weapon);
   }
+
+  DeleteWeapon(id: Number): Observable<Weapon> {
+    return this.http.delete<Weapon>(`${this.apiUrl}/DeleteWeapon/${id}`);
+  }
 }
