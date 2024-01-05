@@ -40,11 +40,6 @@ mat-form-field {
   justify-content: center;
   align-items: center;
 }
-/*
-.cardform {
-  margin: 5px;
-  padding: 5px;
-} */
 
 .input_box {
   width: 500px;
@@ -63,11 +58,10 @@ mat-form-field {
 }
 
 .hero-box {
-  width: 100%;
-  /* gap: 5px; */
+  width: 95%;
+  gap: 5px;
   flex-direction: row;
   display: flex;
   justify-content: space-evenly;
-  /* align-items: left; */
-  margin-bottom: 2rem;
+  margin: 1rem;
 }

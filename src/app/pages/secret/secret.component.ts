@@ -11,6 +11,7 @@ export class SecretComponent {
 
   secrets: Secret[] = [];
   secretsGeral: Secret[] = [];
+  columns: String[] = ["Código", "Nome", "Herói", "Opções"];
 
   constructor(private secretService: SecretService){ }
 

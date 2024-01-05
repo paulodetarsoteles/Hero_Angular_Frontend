@@ -11,6 +11,7 @@ export class WeaponComponent {
 
   weapons: Weapon[] = [];
   weaponsGeral: Weapon[] = [];
+  columns: String[] = ["Código", "Nome", "Herói", "Opções"];
 
   constructor(private weaponService: WeaponService){ }
 

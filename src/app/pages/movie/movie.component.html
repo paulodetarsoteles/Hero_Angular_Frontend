@@ -1,36 +1,40 @@
-<div class="hero-box" style="border-top: 70px;">
-  <button routerLink="/movie-cadastro">Novo filme</button>
-  <div class="input-box">
-    <label>Procurar filme: </label>
-    <input type="text" placeholder="Nome do filme" (input)="searchMovie($event)">
+<div class="hero-box">
+  <div style="width: 20%;">
+    <button mat-raised-button color="primary" routerLink="/movie-cadastro">Novo filme</button>
+  </div>
+  <div style="width: 70%;">
+    <mat-form-field>
+      <mat-label>Procurar filme: </mat-label>
+      <input matInput type="text" placeholder="Nome do filme" (input)="searchMovie($event)">
+    </mat-form-field>
   </div>
 </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Cod.</th>
-      <th>Nome</th>
-      <th>Nota</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody *ngFor="let movie of movies">
-    <tr>
-      <td>
-        {{movie.movieId}}
-      </td>
-      <td>
-        {{movie.name}}
-      </td>
-      <td>
-        {{movie.rate}}
-      </td>
-      <td>
-        <button routerLink="/movie-detalhes/{{movie.movieId}}">Detalhes</button>
-        <button routerLink="/movie-editar/{{movie.movieId}}">Editar</button>
-        <button>Excluir</button>
-      </td>
-    </tr>
-  </tbody>
+<table mat-table [dataSource]="movies" class="mat-elevation-z8">
+  <ng-container matColumnDef="Código">
+    <th mat-header-cell *matHeaderCellDef> Código </th>
+    <td mat-cell *matCellDef="let movie"> {{movie.movieId}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Nome">
+    <th mat-header-cell *matHeaderCellDef> Nome </th>
+    <td mat-cell *matCellDef="let movie"> {{movie.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Nota">
+    <th mat-header-cell *matHeaderCellDef> Nota </th>
+    <td mat-cell *matCellDef="let movie"> {{movie.rate}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Opções">
+    <th mat-header-cell *matHeaderCellDef> </th>
+    <td mat-cell *matCellDef="let movie">
+      <button mat-raised-button color="accent" routerLink="/movie-detalhes/{{movie.movieId}}">Detalhes</button>
+      <button mat-raised-button routerLink="/movie-editar/{{movie.movieId}}">Editar</button>
+      <button mat-raised-button color="warn">Excluir</button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columns"></tr>
+  <tr mat-row *matRowDef="let row; columns: columns;"></tr>
 </table>

@@ -11,6 +11,7 @@ export class MovieComponent {
 
   movies: Movie[] = [];
   moviesGeral: Movie[] = [];
+  columns: String[] = ["Código", "Nome", "Nota", "Opções"];
 
   constructor(private movieService: MovieService){ }
 
