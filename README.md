@@ -10,6 +10,18 @@ Acompanhei a playlist da CrisTech "Projeto FullStack Angular 16 + .NET 6" começ
 
 Link da playlist do curso: https://www.youtube.com/playlist?list=PL8l5r7-11AADwxNy8aYGM2P2Dr0nB5ZW4 
 
+![Screenshot_1](imgs/Screenshot_1.jpg) 
+
+![Screenshot_2](imgs/Screenshot_2.jpg)
+
+![Screenshot_3](imgs/Screenshot_3.jpg)
+
+![Screenshot_4](imgs/Screenshot_4.jpg)
+
+![Screenshot_5](imgs/Screenshot_5.jpg)
+
+![Screenshot_6](imgs/Screenshot_6.jpg)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
