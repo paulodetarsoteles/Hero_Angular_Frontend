@@ -40,6 +40,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { HeroDeleteComponent } from './components/hero-delete/hero-delete.component';
+import { MovieDeleteComponent } from './components/movie-delete/movie-delete.component';
+import { SecretDeleteComponent } from './components/secret-delete/secret-delete.component';
+import { WeaponDeleteComponent } from './components/weapon-delete/weapon-delete.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +68,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     HeroDetalhesComponent,
     MovieDetalhesComponent,
     SecretDetalhesComponent,
-    WeaponDetalhesComponent
+    WeaponDetalhesComponent,
+    HeroDeleteComponent,
+    MovieDeleteComponent,
+    SecretDeleteComponent,
+    WeaponDeleteComponent
   ],
   imports: [
     BrowserModule,

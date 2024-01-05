@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { HeroDeleteComponent } from 'src/app/components/hero-delete/hero-delete.component';
 import { Hero } from 'src/app/models/Hero';
 import { HeroService } from 'src/app/service/hero.service';
 
@@ -11,9 +13,9 @@ export class HeroComponent implements OnInit {
 
   heroes: Hero[] = [];
   heroesGeneral: Hero[] = [];
-  columns: String[] = ['Ativo', 'Código', 'Nome', 'Última Atualização', 'Opções'];
+  columns: string[] = ['Ativo', 'Código', 'Nome', 'Última Atualização', 'Opções'];
 
-  constructor(private heroService: HeroService) { }
+  constructor(private heroService: HeroService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.heroService.GetHeroes().subscribe(data => {
@@ -33,6 +35,13 @@ export class HeroComponent implements OnInit {
 
     this.heroes = this.heroesGeneral.filter(hero => {
       return hero.name.toLowerCase().includes(value);
+    });
+  }
+
+  openDialog(id: number): void {
+    this.dialog.open(HeroDeleteComponent, {
+      width: '360px',
+      height: '180px'
     });
   }
 }

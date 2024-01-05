@@ -1,65 +1,66 @@
-<div class="hero-box">
-  <div style="width: 20%;">
-    <button mat-raised-button color="primary" routerLink="/hero-cadastro">Novo herói</button>
+<mat-card>
+  <div class="hero-box">
+    <div style="width: 20%;">
+      <button mat-raised-button color="primary" routerLink="/hero-cadastro">Novo herói</button>
+    </div>
+    <div style="width: 70%;">
+      <mat-form-field>
+        <mat-label>Procurar herói: </mat-label>
+        <input matInput type="text" placeholder="Nome do herói" (input)="searchHero($event)">
+      </mat-form-field>
+    </div>
   </div>
-  <div style="width: 70%;">
-    <mat-form-field>
-      <mat-label>Procurar herói: </mat-label>
-      <input matInput type="text" placeholder="Nome do herói" (input)="searchHero($event)">
-    </mat-form-field>
-  </div>
-</div>
 
-<table mat-table [dataSource]="heroes" class="mat-elevation-z8">
+  <table mat-table [dataSource]="heroes" class="mat-elevation-z8">
 
-  <!--- Note that these columns can be defined in any order.
+    <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
 
-  <!-- Active Column -->
-  <ng-container matColumnDef="Ativo">
-    <th mat-header-cell *matHeaderCellDef> Ativo </th>
-    <td mat-cell *matCellDef="let hero">
-      <div *ngIf="hero.active === true; else inactiveHero">
-        <img src="assets/images/green-ball.png" style="width: 1em;" alt="Ativo">
-      </div>
-      <ng-template #inactiveHero>
-        <img src="assets/images/red-ball.png" style="width: 1em;" alt="Inativo">
-      </ng-template>
-    </td>
-  </ng-container>
+    <!-- Active Column -->
+    <ng-container matColumnDef="Ativo">
+      <th mat-header-cell *matHeaderCellDef> Ativo </th>
+      <td mat-cell *matCellDef="let hero">
+        <div *ngIf="hero.active === true; else inactiveHero">
+          <img src="assets/images/green-ball.png" style="width: 1em;" alt="Ativo">
+        </div>
+        <ng-template #inactiveHero>
+          <img src="assets/images/red-ball.png" style="width: 1em;" alt="Inativo">
+        </ng-template>
+      </td>
+    </ng-container>
 
-  <!-- Id Column -->
-  <ng-container matColumnDef="Código">
-    <th mat-header-cell *matHeaderCellDef> Código </th>
-    <td mat-cell *matCellDef="let hero"> {{hero.heroId}} </td>
-  </ng-container>
+    <!-- Id Column -->
+    <ng-container matColumnDef="Código">
+      <th mat-header-cell *matHeaderCellDef> Código </th>
+      <td mat-cell *matCellDef="let hero"> {{hero.heroId}} </td>
+    </ng-container>
 
-  <!-- Name Column -->
-  <ng-container matColumnDef="Nome">
-    <th mat-header-cell *matHeaderCellDef> Nome </th>
-    <td mat-cell *matCellDef="let hero"> {{hero.name}} </td>
-  </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="Nome">
+      <th mat-header-cell *matHeaderCellDef> Nome </th>
+      <td mat-cell *matCellDef="let hero"> {{hero.name}} </td>
+    </ng-container>
 
-  <!-- UpdateDate Column -->
-  <ng-container matColumnDef="Última Atualização">
-    <th mat-header-cell *matHeaderCellDef> Atualização </th>
-    <td mat-cell *matCellDef="let hero"> {{hero.updateDate}} </td>
-  </ng-container>
+    <!-- UpdateDate Column -->
+    <ng-container matColumnDef="Última Atualização">
+      <th mat-header-cell *matHeaderCellDef> Atualização </th>
+      <td mat-cell *matCellDef="let hero"> {{hero.updateDate}} </td>
+    </ng-container>
 
-  <!-- OptionButtons Column -->
-  <ng-container matColumnDef="Opções">
-    <th mat-header-cell *matHeaderCellDef> </th>
-    <td mat-cell *matCellDef="let hero">
-      <button mat-raised-button color="accent" routerLink="/hero-detalhes/{{hero.heroId}}">Detalhes</button>
-      <button mat-raised-button routerLink="/hero-editar/{{hero.heroId}}">Editar</button>
-      <button mat-raised-button color="warn">Excluir</button>
-    </td>
-  </ng-container>
+    <!-- OptionButtons Column -->
+    <ng-container matColumnDef="Opções">
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <td mat-cell *matCellDef="let hero">
+        <button mat-raised-button color="accent" routerLink="/hero-detalhes/{{hero.heroId}}">Detalhes</button>
+        <button mat-raised-button routerLink="/hero-editar/{{hero.heroId}}">Editar</button>
+        <button mat-raised-button color="warn" (click)="openDialog(hero.heroId)">Excluir</button>
+      </td>
+    </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="columns"></tr>
-  <tr mat-row *matRowDef="let row; columns: columns;"></tr>
-</table>
-
+    <tr mat-header-row *matHeaderRowDef="columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+  </table>
+</mat-card>
 <!--
 <table>
   <thead>
