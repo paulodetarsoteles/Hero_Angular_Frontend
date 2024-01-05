@@ -10,9 +10,9 @@ Acompanhei a playlist da CrisTech "Projeto FullStack Angular 16 + .NET 6" começ
 
 Link da playlist do curso: https://www.youtube.com/playlist?list=PL8l5r7-11AADwxNy8aYGM2P2Dr0nB5ZW4 
 
-![Screenshot_1](assets/images/Screenshot_1.jpg) 
+![Screenshot_1.jpg](/src/assets/images/Screenshot_1.jpg) 
 
-![Screenshot_2](assets/images/Screenshot_2.jpg)
+![Screenshot_2](/assets/images/Screenshot_2.jpg)
 
 ![Screenshot_3](assets/images/Screenshot_3.jpg)
 
